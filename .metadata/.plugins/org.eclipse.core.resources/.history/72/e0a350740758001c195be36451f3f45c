@@ -1,0 +1,48 @@
+package com.aris.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class AddServletscontroller extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		String no1=req.getParameter("no1");
+		String no2=req.getParameter("no2");
+		
+		String username="root"
+				
+		
+		System.out.println(no1);
+		System.out.println(no2);
+		
+		 int c=Integer.parseInt(no1)+Integer.parseInt(no2);
+		 
+			/*
+			 * PrintWriter out=resp.getWriter();
+			 * 
+			 * //html page with java data and sending out.println("<html>" + "<body>" +
+			 * "<h1 style='color:green'>Sum is :"+c+"<h1><br>" + "</body>" + "<html>");
+			 */
+		 req.setAttribute("number1",no1);
+		 req.setAttribute("number2",no2);
+		 RequestDispatcher rd=req.getRequestDispatcher("output.jsp");
+		 rd.forward(req, resp);
+		 
+		
+	}
+
+
+	
+	
+
+}

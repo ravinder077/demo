@@ -1,0 +1,9 @@
+package com.aris.model;
+
+public class NumberModel {
+	
+	private String numberOne;
+	private String numberTwo;
+	
+
+}
